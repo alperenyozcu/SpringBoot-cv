@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkler</title>
+</head>
+<body>
+  
+   <div layout:fragment="content" >
+<table class="table table-bordered">
+<thead class="thed-dark">
+        <tr>   
+         <th>Yetenek İsim</th>
+  			<th>Yıl</th>
+			<th>Sil</th>
+			<th>Güncelle</th>
+        </tr>
+</thead>
+        <tbody class="text-white">
+
+            <tr th:each = "yetenek: ${yetenekler}"  class="">
+
+                <td>
+
+                    <div>
+
+                        
+                        <p> <b th:text = "${yetenek.getYetenekisim()}"></b> </p>
+                     
+                       
+
+       
+                    </div>
+                </td>
+			<td>
+			<h4  th:text = "${yetenek.getYil()}"> </h4>
+			</td>
+			
+			<td>
+			<a class="btn btn-danger" th:href = "@{/kullanici/yeteneksil(id=${yetenek.getId()})}" >Sil</a>
+			</td>
+				<td>
+			<a class="btn btn-primary" th:href = "@{/kullanici/yetenekguncelle(id=${yetenek.getId()})}" >Güncelle</a>
+			</td>
+			
+			
+			
+            </tr>
+
+        </tbody>
+
+    </table>
+      <form action="/kullanici/yetenekekle" method="POST">
+           <label for="">Yetenek Adı</label>
+   <input type="text" required name="yetenekisim">    
+    <br>
+       
+        <label for="">Yıl</label>
+   <input type="text" required name="yil">    
+    <br>
+     
+     <button type="submit" id="button1">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

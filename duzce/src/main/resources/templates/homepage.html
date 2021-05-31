@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anasayfa Alperen_CV</title>
+    <style>
+        body{
+            
+     background-color: #32323C;
+             background-repeat: repeat-y;
+           background-size: 100% ;        
+        }
+  #button1
+        { transition: all .5s ease;
+    color: #fff;
+    border: 3px solid white;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : #17171C;
+    padding: 10px;
+    outline: none;
+    border-radius: 20px;
+            margin-top: 30px;
+            
+            height:400px;
+                 width: 400px;
+             font-size: 40px;
+            
+        }
+      #button1:hover {
+ color: #fff;
+    background-color: #3E3E8A;
+}
+a{
+	color:white;
+	text-decoration:none;
+	
+}
+
+  #button2
+        { 
+           transition: all .5s ease;
+    color: #fff;
+    border: 3px solid white;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 17px;
+    background-color : #17171C;
+    padding: 10px;
+    outline: none;
+    border-radius: 20px;
+            font-size: 40px;
+              
+            margin-top: 30px;
+            height:400px;
+            width: 400px;
+        }
+            #button2:hover {
+    color: #fff;
+    background-color: #3E3E8A;
+}
+ .topnav {
+            overflow: hidden;
+             border-radius: 15px;
+            background-color: #17171C;
+            
+     
+}
+.flex-parent {
+            display: flex;
+}
+
+.jc-center {
+            justify-content: center;
+}
+
+button.margin-right {
+             margin-right: 20px;
+}
+        
+
+.topnav a {
+              float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+}
+
+.topnav a:hover {
+              background-color: #3E3E8A;
+              color: white;
+}
+
+.topnav a.active {
+              
+              color: white;
+}
+        .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #17171C;
+  color: white;
+  text-align: center;
+            font-family: 'Montserrat', sans-serif;
+}
+        
+    </style>
+</head>
+<body>
+  
+   <div class="topnav">
+  <a class="active" href="/logout">Çıkış Yap</a>
+  
+</div>
+<div class="flex-parent jc-center">
+<a th:href = "@{/kullanici/cvgoster(id=${kullanici.getId()})}">  <button type="submit" id="button1" class="green margin-right">CV GÖSTER</button></a>
+  <a href="/kullanici/egitim"> <button type="submit" id="button2" class="magenta">CV OLUŞTUR </button></a>
+</div>
+
+<div style="padding-left:16px">
+  
+</div>
+   <div class="footer">
+  <p>Alperen_CV Hoşgeldiniz...</p>
+</div>
+    
+</body>
+</html>

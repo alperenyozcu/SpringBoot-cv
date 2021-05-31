@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Alperen_Cv Giriş</title>
+      <link href="/static/css/style.css" rel="stylesheet">
+   
+</head>
+<body>
+    
+    <section class="side">
+        <img src="/static/images/img.png" alt="">
+    </section>
+
+    <section class="main">
+        <div class="login-container">
+            <p class="title">Alperen_CV Kaydol</p>
+            <div class="separator"></div>
+            <p class="welcome-message">Hala Üye değil misiniz? Şimdi Kaydolun.</p>
+
+            <form class="login-form" action="/kaydol" method="post">
+                <div class="form-control">
+                    <input type="text" name="kullaniciadi" required placeholder="Kullanıcı Adı">
+                    <i class="fas fa-user"></i>
+                </div>
+ 					<div class="form-control">
+                    <input type="text" name="kullanicisoyadi" required placeholder="Kullanıcı Soyadı">
+                    <i class="fas fa-user"></i>
+                </div>
+ 					<div class="form-control">
+                    <input type="email" name="email"required placeholder="E-Mail">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-control">
+                    <input type="password" name="sifre" required placeholder="Şifre">
+                    <i class="fas fa-lock"></i>
+                </div>
+
+           
+                   <button class="submit">Kaydol</button>
+   				  <button class="submit"> <a href="/login">  Giriş Yap </a> </button>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>

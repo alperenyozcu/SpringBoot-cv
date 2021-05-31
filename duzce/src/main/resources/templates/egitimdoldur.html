@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+<table class="table table-bordered">
+<thead class="thed-dark">
+        <tr>   
+         <th>Okul</th>
+         <th>Bölüm</th>
+         <th>Sınıf</th>
+  			<th>Sil</th>
+			<th>Güncelle</th>
+        </tr>
+</thead>
+        <tbody class="text-white">
+
+            <tr th:each = "egitim : ${egitimler}"  class="">
+
+                <td>
+
+                    <div>
+
+                       
+                        <p> <b th:text = "${egitim.getOkul()}"></b> </p>
+                     
+                       
+
+       
+                    </div>
+                </td>
+			<td>
+			<h4  th:text = "${egitim.getBolum()}"> </h4>
+			</td>
+			<td>
+			   <p th:text = "${egitim.getSinif()}"> </p>
+			
+			</td>
+			<td>
+			<a class="btn btn-danger" th:href = "@{/kullanici/egitimsil(id=${egitim.getId()})}" >Sil</a>
+			</td>
+				<td>
+			<a class="btn btn-primary" th:href = "@{/kullanici/egitimguncelle(id=${egitim.getId()})}" >Güncelle</a>
+			</td>
+			
+			
+			
+            </tr>
+
+        </tbody>
+
+    </table>
+      <form action="/kullanici/egitimekle" method="POST">
+           <label for="">Okul</label>
+   <input type="text" required name="okul">    
+    <br>
+     <label for="">Bölüm</label>
+   <input type="text" required name="bolum">  
+    <br>  
+     <label for="">Sınıf</label >
+   <input type="text" required name="sinif"> 
+    <br>
+     <button type="submit" id="button1">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

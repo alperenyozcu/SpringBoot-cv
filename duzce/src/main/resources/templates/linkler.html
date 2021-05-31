@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkler</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+<table class="table table-bordered">
+<thead class="thed-dark">
+        <tr>   
+         <th>Link </th>
+  			<th>Link Adı</th>
+			<th>Sil</th>
+			<th>Güncelle</th>
+        </tr>
+</thead>
+        <tbody class="text-white">
+
+            <tr th:each = "link: ${linkler}"  class="">
+
+                <td>
+
+                    <div>
+
+                        
+                        <p> <b th:text = "${link.getLink()}"></b> </p>
+                     
+                       
+
+       
+                    </div>
+                </td>
+			<td>
+			<h4  th:text = "${link.getLinkadi()}"> </h4>
+			</td>
+			
+			<td>
+			<a class="btn btn-danger" th:href = "@{/kullanici/linksil(id=${link.getId()})}" >Sil</a>
+			</td>
+				<td>
+			<a class="btn btn-primary" th:href = "@{/kullanici/linkguncelle(id=${link.getId()})}" >Güncelle</a>
+			</td>
+			
+			
+			
+            </tr>
+
+        </tbody>
+
+    </table>
+      <form action="/kullanici/linkekle" method="POST">
+           <label for="">Link</label>
+   <input type="text" required name="link">    
+    <br>
+       
+        <label for="">LİNK ADI</label>
+   <input type="text" required name="linkadi">    
+    <br>
+     
+     <button type="submit" id="button1">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

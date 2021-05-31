@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 03</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/static/css/admincss.css">
+	<style> 
+	 .topnav {
+            overflow: hidden;
+             border-radius: 15px;
+            background-color: #17171C;
+            
+     
+}
+    
+
+.topnav a {
+              float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+}
+
+.topnav a:hover {
+              background-color: #3E3E8A;
+              color: white;
+}
+
+.topnav a.active {
+              
+              color: white;
+}
+        .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #17171C;
+  color: white;
+  text-align: center;
+            font-family: 'Montserrat', sans-serif;
+}
+   </style>
+
+	</head>
+	<body>
+	  <div class="topnav">
+  <a class="active" href="/logout">Çıkış Yap</a>
+	  </div>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Admin</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4">Hoşgeldiniz!</h4>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>Kullanıcı Adı</th>
+					        <th>Kullanıcı Soyadı</th>
+					        <th>E-mail Adresi</th>
+					        <th>Sistem Rolü</th>
+							<th>Cv Görüntüle</th>
+					        
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr th:each="kullanici:${kullanicilar}">
+					     
+					        <td th:text="${kullanici.kullaniciadi}">1 Year</td>
+					        <td th:text="${kullanici.kullanicisoyadi}">$70.00</td>
+					        <td th:text="${kullanici.email}">$5.00</td>
+					        <td th:text="${kullanici.sistemrol}">$5.00</td>
+					        <td><a th:href = "@{/admin/cvgoster(id=${kullanici.getId()})}" class="btn btn-primary">Cv Görüntüle</a></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  <div class="footer">
+  <p>Alperen_CV Hoşgeldiniz...</p>
+</div>
+
+	</body>
+</html>
+

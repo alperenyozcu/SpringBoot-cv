@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Alperen_Cv Giriş</title>
+      <link href="/static/css/style.css" rel="stylesheet">
+   
+</head>
+<body>
+    
+    <section class="side">
+        <img src="/static/images/img.png" alt="">
+    </section>
+
+    <section class="main">
+        <div class="login-container">
+            <p class="title">Alperen_CV Hoşgeldiniz</p>
+            <div class="separator"></div>
+            <p class="welcome-message">Hizmetlerimize Erişim sağlamak için lütfen giriş yapınız.</p>
+				<div th:if="${param.error}" class="alert alert-error">
+					Yanlış Email adresi veya şifre
+				</div>
+				
+				<div th:if="${param.logout}" class="alert alert-success"> 
+	                   Çıkış Yaptınız.
+	             </div>
+            <form class="login-form" th:action="@{/login}" method="post">
+                <div class="form-control">
+                    <input type="text"  name="username" placeholder="Kullanıcı Adı">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-control">
+                    <input type="password" name="password" placeholder="Şifre">
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <button class="submit" >Giriş Yap</button>
+			
+                   <button class="submit">
+					<a  href="/kaydol" >Kaydol</a></button>
+            </form>
+        </div>
+    </section>
+    
+</body>
+</html>

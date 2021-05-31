@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+<table class="table table-bordered">
+<thead class="thed-dark">
+        <tr>   
+         <th>Açıklama</th>
+  			<th>Adres</th>
+			<th>Doğum Tarihi</th>
+				<th>Telefon Numarası</th>
+			<th>Meslek</th>
+		
+				<th>Sil</th>
+			<th>Güncelle</th>
+        </tr>
+</thead>
+        <tbody class="text-white">
+
+            <tr th:each = "kisiselbilgi: ${kisiselbilgiler}"  class="">
+
+                <td>
+
+                    <div>
+
+                        
+                        <p> <b th:text = "${kisiselbilgi.getAciklama()}"></b> </p>
+                     
+                       
+
+       
+                    </div>
+			<td>
+			<h4  th:text = "${kisiselbilgi.getAdres()}"> </h4>
+			</td>
+			<td>
+			   <p th:text = "${kisiselbilgi.getDogtarih()}"> </p>
+			
+			</td>
+				<td>
+			<h4  th:text = "${kisiselbilgi.getTelefon()}"> </h4>
+			</td>
+			<td>
+			   <p th:text = "${kisiselbilgi.getMeslek()}"> </p>
+			
+			</td>
+                </td>
+			
+			<td>
+			<a class="btn btn-danger" th:href = "@{/kullanici/kisiselbilgisil(id=${kisiselbilgi.getId()})}" >Sil</a>
+			</td>
+				<td>
+			<a class="btn btn-primary" th:href = "@{/kullanici/kisiselbilgiguncelle(id=${kisiselbilgi.getId()})}" >Güncelle</a>
+			</td>
+			
+			
+			
+            </tr>
+
+        </tbody>
+
+    </table>
+      <form action="/kullanici/kisiselbilgiekle" method="POST">
+           <label for="">Açıklama</label>
+   <input type="text" required name="aciklama">    
+    <br>
+       
+        <label for="">Adres</label>
+   <input type="text" required name="adres">    
+    <br>
+        <label for="">Doğum Tarihi</label>
+   <input type="date" required name="dogtarih">    
+    <br>
+        <label for="">Meslek</label>
+   <input type="text" required name="meslek">    
+    <br>
+        <label for="">Telefon Numarası</label>
+   <input type="text" required name="telefon">    
+    <br>
+     
+     <button type="submit" id="button3">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

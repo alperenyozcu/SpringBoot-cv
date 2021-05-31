@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+
+
+      <form action="/kullanici/egitimguncelle" method="POST">
+           <label for="">Okul</label>
+<input type="hidden" value="${egitim.id}" th:field = "${egitim.id}" name="id">
+   <input type="text" required name="okul" th:field="${egitim.okul}">    
+    <br>
+     <label for="">Bölüm</label>
+   <input type="text" required name="bolum" th:field="${egitim.bolum}">  
+    <br>  
+     <label for="">Sınıf</label >
+   <input type="text" required name="sinif" th:field="${egitim.sinif}"> 
+    <br>
+     <button type="submit" id="button1">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

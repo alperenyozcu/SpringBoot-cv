@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+
+   <form action="/kullanici/kisiselbilgiguncelle" method="POST">
+           <label for="">Açıklama</label>
+           <input type="hidden" value="${kisiselbilgi.id}" th:field = "${kisiselbilgi.id}" name="id">
+   <input type="text" required name="aciklama" th:field="${kisiselbilgi.aciklama}">    
+    <br>
+       
+        <label for="">Adres</label>
+   <input type="text" required name="adres" th:field="${kisiselbilgi.adres}">    
+    <br>
+        <label for="">Doğum Tarihi</label>
+   <input type="date" required name="dogtarih" th:field="${kisiselbilgi.dogtarih}">    
+    <br>
+        <label for="">Meslek</label>
+   <input type="text" required name="meslek" th:field="${kisiselbilgi.meslek}">    
+    <br>
+        <label for="">Telefon Numarası</label>
+   <input type="text" required name="telefon" th:field="${kisiselbilgi.telefon}">    
+    <br>
+     
+     <button type="submit" id="button3">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

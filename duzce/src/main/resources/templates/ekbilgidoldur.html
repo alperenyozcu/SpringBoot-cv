@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+<table class="table table-bordered">
+<thead class="thed-dark">
+        <tr>   
+         <th>Ek Bilgi</th>
+  			<th>Sil</th>
+			<th>Güncelle</th>
+        </tr>
+</thead>
+        <tbody class="text-white">
+
+            <tr th:each = "ekbilgi: ${ekbilgiler}"  class="">
+
+                <td>
+
+                    <div>
+
+                        
+                        <p> <b th:text = "${ekbilgi.getEkbilgi()}"></b> </p>
+                     
+                       
+
+       
+                    </div>
+                </td>
+			
+			<td>
+			<a class="btn btn-danger" th:href = "@{/kullanici/ekbilgisil(id=${ekbilgi.getId()})}" >Sil</a>
+			</td>
+				<td>
+			<a class="btn btn-primary" th:href = "@{/kullanici/ekbilgiguncelle(id=${ekbilgi.getId()})}" >Güncelle</a>
+			</td>
+			
+			
+			
+            </tr>
+
+        </tbody>
+
+    </table>
+      <form action="/kullanici/ekbilgiekle" method="POST">
+           <label for="">Ek bilgi</label>
+   <input type="text" required name="ekbilgi">    
+    <br>
+     
+     <button type="submit" id="button2">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>

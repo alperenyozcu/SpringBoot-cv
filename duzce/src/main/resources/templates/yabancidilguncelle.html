@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+   <div layout:fragment="content">
+
+
+       <form action="/kullanici/yabancidilguncelle" method="POST">
+           <label for="">Dil Adı</label>
+<input type="hidden" value="${yabancidil.id}" th:field = "${yabancidil.id}" name="id">
+   <input type="text" required name="diladi" th:field="${yabancidil.diladi}">    
+    <br>
+    <label for="">Seviye</label>
+    <input type="text" required name="seviye" th:field="${yabancidil.seviye}">   
+    <br> 
+     
+     <button type="submit" id="button2">Kaydet</button>
+     <br>
+      </form>   
+  
+    </div>
+    
+</body>
+</html>
